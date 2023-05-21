@@ -1,0 +1,129 @@
+:root{
+    --text-color: white;
+    --button-color: #009688;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(./Images/background.jpg);
+    background-position: center;
+    background-size: cover;  
+    overflow-y: hidden;
+}
+
+nav{
+    
+    width: 85%;
+    height: calc(100vh - 90vh);
+    display: flex;
+    margin: 0 auto;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav h1{
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    
+}
+nav ul li{
+    margin-left: 50px;
+    position: relative;
+}
+nav ul a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+nav ul li::after{
+    content: "";
+    position: absolute;
+    background-color: var(--button-color);
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -50%;
+    transform:scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+nav ul li:hover::after{
+    transform:scaleX(1);
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+.container-heading{
+    color: white;
+    font-size: 6rem;
+    font-weight: 500;
+}
+.container p{
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    position: relative;
+    
+}
+.buttons a{
+
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border: 2px solid var(--button-color);
+    width: 180px;
+    text-align: center;
+    height: 50px;
+    padding: 15px;
+    border-radius: 2.1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.buttons a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    right: 0;
+    background-color: var(--button-color);
+    border-radius: 2.1rem;
+    transform: scaleX(0);
+    transition: 0.5s;
+    transform-origin: left;
+
+}
+.buttons a:hover::after{
+    transform: scaleX(1);
+}
+
+
+
+
